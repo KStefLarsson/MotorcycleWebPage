@@ -1,4 +1,5 @@
-﻿using MotorcycleWebPage.Core.Models;
+﻿using MotorcycleWebPage.Core.Interfaces.Services;
+using MotorcycleWebPage.Core.Models;
 using MotorcycleWebPage.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MotorcycleWebPage.Infrastructure.Services
 {
-    public class ManufacturersService
+    public class ManufacturersService : IManufacturersService
     {
         private readonly ApplicationDbContext _dbContext;
         public ManufacturersService(ApplicationDbContext dbContext)

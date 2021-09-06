@@ -7,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MotorcycleWebPage.Core.Interfaces.Services;
 using MotorcycleWebPage.Infrastructure.Data;
+using MotorcycleWebPage.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,9 @@ namespace MotorcycleWebPage.Web
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IMotorcyclesService, MotorcyclesService>();
+            services.AddScoped<IManufacturersService, ManufacturersService>();
 
             services.AddRazorPages();
         }
