@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MotorcycleWebPage.Core.Interfaces.Services;
@@ -11,6 +12,7 @@ using MotorcycleWebPage.Infrastructure.Data;
 
 namespace MotorcycleWebPage.Web.Pages.Manufacturers
 {
+    //[Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly IManufacturersService _manufacturersService;
@@ -52,6 +54,7 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
 
         public IActionResult OnPost(int id)
         {
+
             if (ModelState.IsValid)
             {
                 var manufacture = _dbContext.Manufacturers.First(c => c.Id == id);

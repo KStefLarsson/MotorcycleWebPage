@@ -12,6 +12,7 @@ using MotorcycleWebPage.Infrastructure.Data;
 
 namespace MotorcycleWebPage.Web.Pages.Motorcycles
 {
+    //[Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly IMotorcyclesService _motorcyclesService;

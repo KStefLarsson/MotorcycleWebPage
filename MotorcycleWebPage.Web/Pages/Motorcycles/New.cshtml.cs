@@ -11,6 +11,7 @@ using MotorcycleWebPage.Core.Models;
 
 namespace MotorcycleWebPage.Web.Pages.Motorcycles
 {
+    //[Authorize(Roles = "Admin")]
     public class NewModel : PageModel
     {
         private readonly IMotorcyclesService _motorcyclesService;
@@ -47,7 +48,7 @@ namespace MotorcycleWebPage.Web.Pages.Motorcycles
         [MaxLength(50)]
         [Required]
         public string ManufactureName { get; set; }
-        //public Manufacturer Manufactures { get; set; }
+
         [BindProperty]
         [Range(1, 3)]
         public List<SelectListItem> AllBikeModels { get; set; }

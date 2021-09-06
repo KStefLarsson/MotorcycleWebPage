@@ -10,6 +10,7 @@ using MotorcycleWebPage.Core.Models;
 
 namespace MotorcycleWebPage.Web.Pages.Manufacturers
 {
+    //[Authorize(Roles = "Admin")]
     public class NewModel : PageModel
     {
         private readonly IManufacturersService _manufacturersService;
@@ -29,7 +30,7 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
         public string Country { get; set; }
         [BindProperty]
         [Required]
-        [Range(1950, 2025)]
+        [Range(1900, 2025)]
         public int Founded { get; set; }
         [BindProperty]
         [Required]

@@ -228,7 +228,7 @@ namespace MotorcycleWebPage.Infrastructure.Data
                 EmailConfirmed = true
             };
             var result = userManager.CreateAsync(user, password).Result;
-            var r = userManager.AddToRolesAsync(user, roles).Result;
+            userManager.AddToRolesAsync(user, roles).Wait();
         }
         private static void SeedRoles(ApplicationDbContext dbContext)
         {
