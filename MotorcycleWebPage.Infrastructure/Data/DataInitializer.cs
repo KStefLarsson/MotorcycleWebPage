@@ -22,7 +22,6 @@ namespace MotorcycleWebPage.Infrastructure.Data
             SeedManufacturers(dbContext);
         }
 
-
         private static void SeedManufacturers(ApplicationDbContext dbContext)
         {
             if (!dbContext.Manufacturers.Any(m => m.Name == "Ducati"))

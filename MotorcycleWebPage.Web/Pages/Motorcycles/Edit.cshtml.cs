@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,14 +13,12 @@ using MotorcycleWebPage.Infrastructure.Data;
 
 namespace MotorcycleWebPage.Web.Pages.Motorcycles
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
-        private readonly IMotorcyclesService _motorcyclesService;
         private readonly ApplicationDbContext _dbContext;
-        public EditModel(IMotorcyclesService motorcyclesService, ApplicationDbContext dbContext)
+        public EditModel(ApplicationDbContext dbContext)
         {
-            _motorcyclesService = motorcyclesService;
             _dbContext = dbContext;
         }
 

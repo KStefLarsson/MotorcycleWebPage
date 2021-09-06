@@ -10,10 +10,9 @@
         @foreach (var search in Model.Products)
         {
             <tr>
-                <td><a>@search.Name</a></td>
                 <td>
                     <a asp-page="/SearchResult/ShowResult" asp-route-Id="@search.Id"
-                       role="button"></a>
+                       role="button">@search.Name</a>
                 </td>
             </tr>
         }

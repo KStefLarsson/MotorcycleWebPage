@@ -12,15 +12,13 @@ using MotorcycleWebPage.Infrastructure.Data;
 
 namespace MotorcycleWebPage.Web.Pages.Manufacturers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
-        private readonly IManufacturersService _manufacturersService;
         private readonly ApplicationDbContext _dbContext;
-        public EditModel(IManufacturersService manufacturersService, ApplicationDbContext dbContext)
+        public EditModel(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
-            _manufacturersService = manufacturersService;
         }
 
         public int Id { get; set; }
@@ -39,8 +37,6 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
         [BindProperty]
         [Required]
         public string Description { get; set; }
-        //public List<Manufacture> Facturers { get; set; }
-
 
         public void OnGet(int id)
         {
@@ -54,7 +50,6 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
 
         public IActionResult OnPost(int id)
         {
-
             if (ModelState.IsValid)
             {
                 var manufacture = _dbContext.Manufacturers.First(c => c.Id == id);

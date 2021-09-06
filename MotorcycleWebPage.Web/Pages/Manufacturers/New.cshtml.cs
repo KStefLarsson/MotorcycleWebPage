@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MotorcycleWebPage.Core.Interfaces.Services;
@@ -10,7 +11,7 @@ using MotorcycleWebPage.Core.Models;
 
 namespace MotorcycleWebPage.Web.Pages.Manufacturers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class NewModel : PageModel
     {
         private readonly IManufacturersService _manufacturersService;
