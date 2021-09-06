@@ -1,0 +1,40 @@
+﻿@page
+@model MotorcycleWebPage.Web.Pages.Motorcycles.CustomBikesModel
+@{
+}
+
+<picture class="picture">
+    <img class="imgHome" src="~/Img/Home/11.jpg" data-object-fit="cover" />
+</picture>
+
+<div>
+    @foreach (var custom in Model.CustomBikes)
+    {
+        <div class="row">
+            <div class="col-lg-12 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-page="/Motorcycles/ViewBike" asp-route-id="@custom.Id">
+                            <img width="250" src="/Img/Motorcycles/@(custom.Id).jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Modell</label>
+                                    <p class="form-control">@custom.Model</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tillverkare</label>
+                                    <p class="form-control">@custom.ManufactureName</p>
+                                </div>
+                            </div>
+                        </form>
+                        <a class="btn btn-outline-primary" asp-page="/Motorcycles/ViewBike" asp-route-id="@custom.Id">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

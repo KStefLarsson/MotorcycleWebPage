@@ -1,0 +1,42 @@
+﻿@page
+@model MotorcycleWebPage.Web.Pages.Motorcycles.TouringBikesModel
+@{
+}
+
+<picture class="picture">
+    <img class="imgHome" src="~/Img/Home/13.jpg" data-object-fit="cover" />
+</picture>
+
+<div>
+    @foreach (var touring in Model.TouringBikes)
+    {
+        <div class="row">
+            <div class="col-lg-12 mb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-page="/Motorcycles/ViewBike" asp-route-id="@touring.Id">
+                            <img width="300" src="/Img/Motorcycles/@(touring.Id).jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Modell</label>
+                                    <p class="form-control">@touring.Model</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tillverkare</label>
+                                    <p class="form-control">@touring.ManufactureName</p>
+                                </div>
+                            </div>
+                        </form>
+                        <div>
+                            <a class="btn btn-outline-primary" asp-page="/Motorcycles/ViewBike" asp-route-id="@touring.Id">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

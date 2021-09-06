@@ -1,0 +1,21 @@
+﻿@page
+@model MotorcycleWebPage.Web.Pages.SearchResult.IndexModel
+@{
+}
+
+<h3>Du sökte på @Model.SearchWord</h3>
+
+<table class="table">
+    <tbody>
+        @foreach (var search in Model.Products)
+        {
+            <tr>
+                <td><a>@search.Name</a></td>
+                <td>
+                    <a asp-page="/Edit" asp-route-Id="@search.Id"
+                       role="button"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

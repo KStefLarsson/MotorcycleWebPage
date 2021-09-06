@@ -1,0 +1,54 @@
+﻿@page
+@model MotorcycleWebPage.Web.Pages.Motorcycles.ViewModel
+@{
+}
+
+<picture class="picture">
+    <img class="imgHome" src="~/Img/Motorcycles/@(Model.Id).jpg" data-object-fit="cover" />
+</picture>
+
+
+<div class="row">
+    <div class="col-lg-12 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <img width="500" src="/Img/Motorcycles/@(Model.Id).jpg" />
+                <a class="EditBikeButton btn btn-outline-primary mt-3" asp-page="/Motorcycles/Edit" asp-route-id="@Model.Id">Ändra</a>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Modell</label>
+                            <p class="form-control">@Model.Model</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Tillverkare</label>
+                            <p class="form-control">@Model.ManufactureName</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Tillverkningsår</label>
+                            <p class="form-control">@Model.Year</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Max hastighet</label>
+                            <p class="form-control">@Model.TopSpeed</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Hästkrafter</label>
+                            <p class="form-control">@Model.HorsePower</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Beskrivning</label>
+                            <textarea class="form-control" rows="6">@Model.Description</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Modell typ</label>
+                            <p class="form-control">@Model.TypeOfModel</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
