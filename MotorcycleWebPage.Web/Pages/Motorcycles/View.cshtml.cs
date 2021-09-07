@@ -26,7 +26,6 @@ namespace MotorcycleWebPage.Web.Pages.Motorcycles
         public int Year { get; set; }
         public string TypeOfModel { get; set; }
         public string ManufactureName { get; set; }
-        //public Manufacture Manufactures { get; set; }
         public List<Motorcycle> Motorcycles { get; set; }
         public void OnGet(int id)
         {

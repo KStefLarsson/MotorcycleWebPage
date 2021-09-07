@@ -23,6 +23,7 @@ namespace MotorcycleWebPage.Web.Pages.SearchResult
             public string ManufactureName { get; set; }
             public string Desription { get; set; }
             public string TypeOfModel { get; set; }
+
         }
 
         public string SearchWord { get; set; }
@@ -31,18 +32,20 @@ namespace MotorcycleWebPage.Web.Pages.SearchResult
 
         public void OnGet(string query)
         {
+
             Products = _dbContext.Motorcycles.Where(r => r.Model.Contains(query)
                                             || r.ManufactureName.Contains(query)
                                             || r.Description.Contains(query)
-                                            || r.TypeOfModel.Contains(query)
-            ).Select(p => new ProductListItem
-            {
-                Id = p.Id,
-                Name = p.Model,
-                Desription = p.Description,
-                TypeOfModel = p.TypeOfModel,
-                ManufactureName = p.ManufactureName
-            }).ToList();
+                                            || r.TypeOfModel.Contains(query))
+
+                .Select(p => new ProductListItem
+                {
+                    Id = p.Id,
+                    Name = p.Model,
+                    Desription = p.Description,
+                    TypeOfModel = p.TypeOfModel,
+                    ManufactureName = p.ManufactureName,
+                }).ToList();
 
             SearchWord = query;
         }

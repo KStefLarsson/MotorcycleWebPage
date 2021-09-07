@@ -36,6 +36,7 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
         public int Founded { get; set; }
         [BindProperty]
         [Required]
+        [MaxLength(500)]
         public string Description { get; set; }
 
         public void OnGet(int id)

@@ -25,7 +25,7 @@ namespace MotorcycleWebPage.Web.Pages.Motorcycles
         public int Id { get; set; }
         [BindProperty]
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Model { get; set; }
         [BindProperty]
         [MaxLength(500)]
@@ -45,9 +45,11 @@ namespace MotorcycleWebPage.Web.Pages.Motorcycles
         public int Year { get; set; }
         [BindProperty]
         [Required]
+        [MaxLength(20)]
         public string TypeOfModel { get; set; }
         [BindProperty]
         [Required]
+        [MaxLength(50)]
         public string ManufactureName { get; set; }
         [BindProperty]
         public int MotorcycleId { get; set; }
