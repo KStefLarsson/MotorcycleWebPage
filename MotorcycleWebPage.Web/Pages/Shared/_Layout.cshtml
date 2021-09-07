@@ -11,28 +11,34 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MotorcycleWebPage.Web</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <div class="dropdown">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Motorcycles/Index">Motorcyklar</a>
+                        <div class="dropdown-content">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Motorcycles/SportBikes">Sport</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Motorcycles/CustomBikes">Custom</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Motorcycles/TouringBikes">Touring</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Motorcycles/Index">Motorcyklar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Manufacturers/Index">Sammarbetspartners</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Manufacturers/Index">Tillverkare</a>
                         </li>
                     </ul>
                     <form class="d-flex" method="get" action="/SearchResult/Index">
                         <input class="form-control me-2" type="text" placeholder="Search" name="query">
                         <input class="btn btn-outline-primary" type="submit" value="Sök" />
                     </form>
-                    <partial name="_LoginPartial"/>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>

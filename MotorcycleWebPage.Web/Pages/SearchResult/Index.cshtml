@@ -3,18 +3,51 @@
 @{
 }
 
-<h3>Du sökte på @Model.SearchWord</h3>
+<picture class="picture">
+    <img class="imgHome" src="~/Img/SearchResult/1.jpg" data-object-fit="cover" />
+</picture>
 
-<table class="table">
-    <tbody>
-        @foreach (var search in Model.Products)
-        {
-            <tr>
-                <td>
-                    <a asp-page="/SearchResult/ShowResult" asp-route-Id="@search.Id"
-                       role="button">@search.Name</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h3><mark>Du sökte på @Model.SearchWord</mark></h3>
+
+<div class="row SearchResultHeading">
+    <div class="col-lg-12 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h6 text-uppercase mb-0">Motorcyklar</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    @foreach (var search in Model.Products)
+                    {
+                        <div class="form-group">
+                            <label>Motorcyklar</label>
+                            <a asp-page="/Motorcycles/View" asp-route-Id="@search.Id"
+                               role="button">@search.Name</a>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h6 text-uppercase mb-0">Tillverkare</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    @foreach (var search in Model.Products)
+                    {
+                        <div class="form-group">
+                            <label>Tillverkare</label>
+                            <a asp-page="/Manufacturers/View" asp-route-Id="@search.Id"
+                               role="button">@search.ManufactureName</a>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

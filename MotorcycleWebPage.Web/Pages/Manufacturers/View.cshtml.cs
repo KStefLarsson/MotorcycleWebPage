@@ -24,12 +24,12 @@ namespace MotorcycleWebPage.Web.Pages.Manufacturers
 
         public void OnGet(int id)
         {
-            var manufactur = _dbContext.Manufacturers.First(c => c.Id == id);
-            Id = manufactur.Id;
-            Name = manufactur.Name;
-            Country = manufactur.Country;
-            Founded = manufactur.Founded;
-            Description = manufactur.Description;
+            var manufacture = _dbContext.Manufacturers.First(c => c.Id == id);
+            Id = manufacture.Id;
+            Name = manufacture.Name;
+            Country = manufacture.Country;
+            Founded = manufacture.Founded;
+            Description = manufacture.Description;
         }
     }
 }

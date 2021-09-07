@@ -40,7 +40,8 @@ namespace MotorcycleWebPage.Web.Pages.SearchResult
                 Id = p.Id,
                 Name = p.Model,
                 Desription = p.Description,
-                TypeOfModel = p.TypeOfModel
+                TypeOfModel = p.TypeOfModel,
+                ManufactureName = p.ManufactureName
             }).ToList();
 
             SearchWord = query;
