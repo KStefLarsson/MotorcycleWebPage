@@ -23,7 +23,6 @@ namespace MotorcycleWebPage.Web.Pages.SearchResult
             public string ManufactureName { get; set; }
             public string Desription { get; set; }
             public string TypeOfModel { get; set; }
-
         }
 
         public string SearchWord { get; set; }
@@ -47,6 +46,7 @@ namespace MotorcycleWebPage.Web.Pages.SearchResult
                     ManufactureName = p.ManufactureName,
                 }).ToList();
 
+            Products = Products.OrderBy(p => p.Name).ToList();
             SearchWord = query;
         }
     }
